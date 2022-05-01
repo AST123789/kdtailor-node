@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/table-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/basictable.css" />
+    <link href="css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/export.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/flipclock.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/circles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />  
+
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Kd Tailor POS</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- !-- //amcharts --> 
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/amcharts.js"></script>
+    <script src="js/serial.js"></script>
+     <script src="js/export.js"></script>	
+     <script src="js/light.js"></script>
+    <script src="js/chart1.js"></script>
+            <script src="js/Chart.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    
+    <script src="js/classie.js"></script>
+    <script src="js/gnmenu.js"></script>
+    <script>
+        new gnMenu( document.getElementById( 'gn-menu' ) );
+    </script>
+        <!-- script-for-menu -->
+
+<!-- /circle-->
+ <script type="text/javascript" src="js/circles.js"></script>
+                         <script>
+                            var colors = [
+                                    ['#ffffff', '#fd9426'], ['#ffffff', '#fc3158'],['#ffffff', '#53d769'], ['#ffffff', '#147efb']
+                                ];
+                            for (var i = 1; i <= 7; i++) {
+                                var child = document.getElementById('circles-' + i),
+                                    percentage = 30 + (i * 10);
+                                    
+                                Circles.create({
+                                    id:         child.id,
+                                    percentage: percentage,
+                                    radius:     80,
+                                    width:      10,
+                                    number:   	percentage / 1,
+                                    text:       '%',
+                                    colors:     colors[i - 1]
+                                });
+                            }
+                    
+            </script>
+<!-- //circle -->
+<!--skycons-icons-->
+<script src="js/skycons.js"></script>
+<script>
+                                 var icons = new Skycons({"color": "#fcb216"}),
+                                      list  = [
+                                        "partly-cloudy-day"
+                                      ],
+                                      i;
+
+                                  for(i = list.length; i--; )
+                                    icons.set(list[i], list[i]);
+                                  icons.play();
+                            </script>
+                            <script>
+                                 var icons = new Skycons({"color": "#fff"}),
+                                      list  = [
+                                        "clear-night","partly-cloudy-night", "cloudy", "clear-day", "sleet", "snow", "wind","fog"
+                                      ],
+                                      i;
+
+                                  for(i = list.length; i--; )
+                                    icons.set(list[i], list[i]);
+                                  icons.play();
+                            </script>
+<!--//skycons-icons-->
+<!-- //js -->
+<script src="js/screenfull.js"></script>
+    <script>
+    $(function () {
+        $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+        if (!screenfull.enabled) {
+            return false;
+        }
+
+        
+
+        $('#toggle').click(function () {
+            screenfull.toggle($('#container')[0]);
+        });	
+    });
+    </script>
+    <script src="js/flipclock.js"></script>
+
+<script type="text/javascript">
+    var clock;
+    
+    $(document).ready(function() {
+        
+        clock = $('.clock').FlipClock({
+            clockFace: 'HourlyCounter'
+        });
+    });
+</script>
+<script src="js/bars.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<!-- <script>
+  function btnprintYes(){
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    pdf.canvas.height = 72 * 11;
+    pdf.canvas.width = 72 * 8.5;
+  
+    pdf.fromHTML(document.body);
+  
+    pdf.save('test.pdf');
+  }
+</script> -->
+<script>
+  // $(document).bind('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function (e) {
+  //   var fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
+    
+  //   if (!fullscreenElement) {
+  //     let person = prompt("Please enter your name:", "Harry Potter");
+  //     if (person == null || person == "") {
+  //       text = "User cancelled the prompt.";
+  //     } else {
+  //       text = "Hello " + person + "! How are you today?";
+  //     }
+  //     console.log("Enter")
+  //   } else {
+  //     console.log('Entering full-screen mode...');
+  //   }
+  // });
+  </script>
+  </body>
+</html>
